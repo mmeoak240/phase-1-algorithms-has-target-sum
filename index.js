@@ -1,17 +1,40 @@
+
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {};
+  for (let i = 0; i < array.length; i++) {
+  const complement = target- array[i];
+  if (seenNumbers[complement]) return true;
+  seenNumbers[array[i]] = true;
+  }
+  return false
 }
+
+
+
+// function hasTargetSum(array, target) {
+// for (let i = 0; i < array.length; i++){
+//   const complement = target - array[i];
+//   for (let j = i+1; j<array.length; j++) {
+//     if (array[j] === complement) return true;
+//   }
+// }
+// return false
+//   }
+
 
 /* 
   Write the Big O time complexity of your function here
 */
 
 /* 
-  Add your pseudocode here
+  take number at index n and add it to all following numbers 
+  increase index n by 1 each time
 */
 
 /*
-  Add written explanation of your solution here
+  Create a function that takes in an array of integers and a target integer. 
+  the function must search through the array and add each number with one other number.
+  if the value of the addition is equal to the target integer return true, else return false.
 */
 
 // You can run `node index.js` to view these console logs
